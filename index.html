@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Model — Demo</title>
+<meta name="description" content="Media Model demo — the homepage prototype and the redesign proposal deck.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f2873; --navy-deep:#0e2052; --yellow:#fad75f; --yellow-deep:#f2c93f;
+  --off:#f4f4f4; --white:#ffffff; --ink:#141414;
+  --hair:rgba(15,40,115,.12); --hair-soft:rgba(15,40,115,.08);
+  --e:cubic-bezier(.32,.72,0,1);
+  --shadow:0 24px 60px -30px rgba(15,40,115,.35); --shadow-soft:0 14px 40px -24px rgba(15,40,115,.30);
+  --serif:'Arvo',Georgia,serif; --sans:'Sora',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{font-family:var(--sans);background:var(--off);color:var(--ink);
+  -webkit-font-smoothing:antialiased;line-height:1.5;
+  display:flex;align-items:center;justify-content:center;padding:clamp(24px,6vw,80px)}
+.wrap{width:100%;max-width:1040px}
+
+.brand{font-family:var(--sans);font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  font-size:.8rem;color:var(--navy)}
+.brand small{display:block;font-weight:400;letter-spacing:.1em;font-size:.66rem;
+  color:rgba(15,40,115,.6);margin-top:.35rem}
+
+.ey{display:flex;align-items:center;gap:.8rem;margin-top:clamp(28px,6vw,56px);
+  font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--navy)}
+.ey::before{content:"";width:34px;height:9px;background:var(--yellow);border-radius:2px}
+
+h1{font-family:var(--serif);font-weight:700;line-height:1;letter-spacing:-.01em;
+  font-size:clamp(2.6rem,8vw,5rem);color:var(--navy);margin-top:1rem}
+.sub{font-size:clamp(1rem,2.2vw,1.25rem);color:rgba(20,20,20,.6);margin-top:1.1rem;max-width:46ch}
+
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px);
+  margin-top:clamp(32px,6vw,56px)}
+@media (max-width:680px){ .cards{grid-template-columns:1fr} }
+
+.card{position:relative;display:flex;flex-direction:column;background:var(--white);
+  border:1px solid var(--hair-soft);border-radius:4px;box-shadow:var(--shadow-soft);
+  padding:clamp(24px,3vw,34px);text-decoration:none;color:inherit;overflow:hidden;
+  transition:transform .5s var(--e),box-shadow .5s var(--e),border-color .5s var(--e)}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--yellow);
+  transform:scaleX(0);transform-origin:left;transition:transform .5s var(--e)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--hair)}
+.card:hover::before{transform:scaleX(1)}
+.card:active{transform:translateY(-1px) scale(.995)}
+.card:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+
+.card .tag{font-family:var(--sans);font-weight:600;font-size:.7rem;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(20,20,20,.45)}
+.card h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,3vw,2rem);
+  line-height:1.08;color:var(--navy);margin-top:.7rem}
+.card p{font-family:var(--sans);font-size:1rem;line-height:1.55;color:rgba(20,20,20,.62);
+  margin-top:.8rem;flex:1}
+.go{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.6rem;
+  font-family:var(--sans);font-weight:600;font-size:1rem;color:var(--navy)}
+.go .arrow{transition:transform .4s var(--e)}
+.card:hover .go .arrow{transform:translateX(5px)}
+
+.foot{display:flex;align-items:center;gap:.7rem;margin-top:clamp(28px,5vw,48px);
+  font-family:var(--sans);font-size:.8rem;color:rgba(20,20,20,.5)}
+.foot .bar{width:28px;height:2px;background:var(--navy);border-radius:2px}
+
+@media (prefers-reduced-motion:reduce){
+  .card,.card::before,.go .arrow{transition:none!important}
+  .card:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="brand">Media Model<small>Research collective · since 2001</small></div>
+
+  <div class="ey">Demo</div>
+  <h1>Media Model demo</h1>
+  <p class="sub">Two artifacts from the website redesign — the reasoning, and the result.</p>
+
+  <div class="cards">
+    <a class="card" href="Redesign%20Proposal.html">
+      <span class="tag">Proposal deck</span>
+      <h2>Redesign Proposal</h2>
+      <p>A 21-slide walkthrough from the original brief to a built homepage — every change traced to a finding.</p>
+      <span class="go">Open the deck <span class="arrow">&rarr;</span></span>
+    </a>
+
+    <a class="card" href="homepage-prototype.html">
+      <span class="tag">Prototype</span>
+      <h2>Homepage Prototype</h2>
+      <p>The high-fidelity homepage, built in the brand's own visual language — navy, yellow, and the window onto Armenia.</p>
+      <span class="go">Open the prototype <span class="arrow">&rarr;</span></span>
+    </a>
+  </div>
+
+  <div class="foot"><span class="bar"></span>mediamodel.am</div>
+</main>
+</body>
+</html>
