@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 777.02">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 36.21px;
+      }
+
+      .cls-2 {
+        fill: #fad660;
+        stroke-width: 8px;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #fad660;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        stroke-width: 9px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-4 {
+        stroke: #aaa;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <line class="cls-2" y1="363.32" x2="1141.03" y2="363.32"/>
+    <circle class="cls-3" cx="1452.15" cy="376.07" r="137.95"/>
+    <circle class="cls-3" cx="1452.15" cy="376.07" r="190.52"/>
+    <circle class="cls-3" cx="1452.15" cy="376.07" r="249.58"/>
+    <circle class="cls-3" cx="1452.15" cy="376.07" r="310.54"/>
+    <line class="cls-4" x1="1452.15" x2="1452.15" y2="777.02"/>
+    <line class="cls-4" x1="1106.13" y1="363.32" x2="1920" y2="363.32"/>
+    <line class="cls-4" x1="1150.52" y1="60.12" x2="1815.17" y2="724.76"/>
+    <line class="cls-4" x1="1753.79" y1="60.12" x2="1089.14" y2="724.76"/>
+    <line class="cls-4" x1="1565.77" y1="86.97" x2="1327.98" y2="665.33"/>
+    <line class="cls-4" x1="1727.61" y1="247.93" x2="1161.02" y2="484.36"/>
+    <line class="cls-4" x1="1749.89" y1="485.72" x2="1171.53" y2="247.93"/>
+    <line class="cls-4" x1="1578.13" y1="663.73" x2="1337.31" y2="86.62"/>
+    <text class="cls-1" transform="translate(1110.7969 348.0744)"><tspan x="0" y="0">0</tspan></text>
+    <text class="cls-1" transform="translate(1308.6534 50.3737)"><tspan x="0" y="0">20</tspan></text>
+    <text class="cls-1" transform="translate(1578.1255 60.1176)"><tspan x="0" y="0">40</tspan></text>
+    <text class="cls-1" transform="translate(1782.3154 348.0745)"><tspan x="0" y="0">50</tspan></text>
+    <text class="cls-1" transform="translate(1666.2879 641.3877)"><tspan x="0" y="0">60</tspan></text>
+    <text class="cls-1" transform="translate(1434.3812 734.5237)"><tspan x="0" y="0">80</tspan></text>
+    <text class="cls-1" transform="translate(1188.1814 652.1455)"><tspan x="0" y="0">90</tspan></text>
+    <text class="cls-1" transform="translate(1076.8246 406.1891)"><tspan x="0" y="0">100</tspan></text>
+  </g>
+</svg>
