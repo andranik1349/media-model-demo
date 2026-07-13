@@ -7,66 +7,68 @@
 <meta name="description" content="Media Model demo — the homepage prototype and the redesign proposal deck.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Overpass+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0f2873; --navy-deep:#0e2052; --yellow:#fad75f; --yellow-deep:#f2c93f;
-  --off:#f4f4f4; --white:#ffffff; --ink:#141414;
-  --hair:rgba(15,40,115,.12); --hair-soft:rgba(15,40,115,.08);
+  --bg:#111214; --bg-2:#0c0d0f; --panel:#18191c;
+  --red:#ca1d00; --red-bright:#eb3213;
+  --white:#ffffff; --hair:rgba(255,255,255,.14); --hair-soft:rgba(255,255,255,.08);
   --e:cubic-bezier(.32,.72,0,1);
-  --shadow:0 24px 60px -30px rgba(15,40,115,.35); --shadow-soft:0 14px 40px -24px rgba(15,40,115,.30);
-  --serif:'Arvo',Georgia,serif; --sans:'Sora',system-ui,sans-serif;
+  --shadow-card:0 12px 24px 0 rgba(0,0,0,.12); --shadow-glow-red:8px 8px 16px 0 rgba(202,29,0,.24);
+  --sans:'Google Sans',system-ui,-apple-system,sans-serif; --mono:'Overpass Mono',ui-monospace,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{min-height:100%}
-body{font-family:var(--sans);background:var(--off);color:var(--ink);
+body{font-family:var(--sans);background:var(--bg);color:var(--white);
   -webkit-font-smoothing:antialiased;line-height:1.5;
   display:flex;align-items:center;justify-content:center;padding:clamp(24px,6vw,80px)}
 .wrap{width:100%;max-width:1040px}
 
-.brand{font-family:var(--sans);font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  font-size:.8rem;color:var(--navy)}
-.brand small{display:block;font-weight:400;letter-spacing:.1em;font-size:.66rem;
-  color:rgba(15,40,115,.6);margin-top:.35rem}
+.brandrow{display:flex;align-items:center;justify-content:space-between}
+.vecto-mark{height:32px;width:auto;display:block}
+.client-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.55)}
 
-.ey{display:flex;align-items:center;gap:.8rem;margin-top:clamp(28px,6vw,56px);
-  font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.24em;
-  text-transform:uppercase;color:var(--navy)}
-.ey::before{content:"";width:34px;height:9px;background:var(--yellow);border-radius:2px}
+.ey{display:flex;align-items:center;gap:.9rem;margin-top:clamp(28px,6vw,56px);
+  font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--red-bright)}
+.ey::before{content:"";width:34px;height:3px;background:var(--red)}
 
-h1{font-family:var(--serif);font-weight:700;line-height:1;letter-spacing:-.01em;
-  font-size:clamp(2.6rem,8vw,5rem);color:var(--navy);margin-top:1rem}
-.sub{font-size:clamp(1rem,2.2vw,1.25rem);color:rgba(20,20,20,.6);margin-top:1.1rem;max-width:46ch}
+h1{font-family:var(--sans);font-weight:700;line-height:1;letter-spacing:-.01em;
+  font-size:clamp(2.6rem,8vw,5rem);color:var(--white);margin-top:1.1rem}
+.sub{font-size:clamp(1rem,2.2vw,1.25rem);color:rgba(255,255,255,.72);margin-top:1.1rem;max-width:46ch}
 
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px);
   margin-top:clamp(32px,6vw,56px)}
 @media (max-width:680px){ .cards{grid-template-columns:1fr} }
 
-.card{position:relative;display:flex;flex-direction:column;background:var(--white);
-  border:1px solid var(--hair-soft);border-radius:4px;box-shadow:var(--shadow-soft);
+.card{position:relative;display:flex;flex-direction:column;background:var(--panel);
+  border:1px solid var(--hair-soft);border-radius:4px;box-shadow:var(--shadow-card);
   padding:clamp(24px,3vw,34px);text-decoration:none;color:inherit;overflow:hidden;
   transition:transform .5s var(--e),box-shadow .5s var(--e),border-color .5s var(--e)}
-.card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--yellow);
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--red);
   transform:scaleX(0);transform-origin:left;transition:transform .5s var(--e)}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--hair)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-glow-red);border-color:var(--hair)}
 .card:hover::before{transform:scaleX(1)}
 .card:active{transform:translateY(-1px) scale(.995)}
-.card:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.card:focus-visible{outline:3px solid var(--red-bright);outline-offset:3px}
 
-.card .tag{font-family:var(--sans);font-weight:600;font-size:.7rem;letter-spacing:.16em;
-  text-transform:uppercase;color:rgba(20,20,20,.45)}
-.card h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,3vw,2rem);
-  line-height:1.08;color:var(--navy);margin-top:.7rem}
-.card p{font-family:var(--sans);font-size:1rem;line-height:1.55;color:rgba(20,20,20,.62);
+.card .tag{font-family:var(--mono);font-weight:500;font-size:.68rem;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.45)}
+.card h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.5rem,3vw,2rem);
+  line-height:1.1;color:var(--white);margin-top:.7rem}
+.card p{font-family:var(--sans);font-size:1rem;line-height:1.55;color:rgba(255,255,255,.62);
   margin-top:.8rem;flex:1}
 .go{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.6rem;
-  font-family:var(--sans);font-weight:600;font-size:1rem;color:var(--navy)}
+  font-family:var(--sans);font-weight:600;font-size:1rem;color:var(--red-bright)}
 .go .arrow{transition:transform .4s var(--e)}
 .card:hover .go .arrow{transform:translateX(5px)}
 
-.foot{display:flex;align-items:center;gap:.7rem;margin-top:clamp(28px,5vw,48px);
-  font-family:var(--sans);font-size:.8rem;color:rgba(20,20,20,.5)}
-.foot .bar{width:28px;height:2px;background:var(--navy);border-radius:2px}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  margin-top:clamp(28px,5vw,48px);padding-top:clamp(20px,3vw,28px);border-top:1px solid var(--hair)}
+.foot .site{font-family:var(--sans);font-size:.85rem;color:rgba(255,255,255,.7)}
+.foot .credit{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.55)}
 
 @media (prefers-reduced-motion:reduce){
   .card,.card::before,.go .arrow{transition:none!important}
@@ -76,9 +78,20 @@ h1{font-family:var(--serif);font-weight:700;line-height:1;letter-spacing:-.01em;
 </head>
 <body>
 <main class="wrap">
-  <div class="brand">Media Model<small>Research collective · since 2001</small></div>
+  <div class="brandrow">
+    <svg class="vecto-mark" viewBox="0 0 332 116" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VECTO">
+      <path d="M253.25 49.1846C236.687 49.1846 223.261 62.6404 223.261 79.2391C223.261 95.8378 236.687 109.294 253.25 109.294C269.813 109.294 283.239 95.8378 283.239 79.2391C283.239 62.6404 269.813 49.1846 253.25 49.1846ZM253.25 97.8775C242.979 97.8775 234.653 89.5333 234.653 79.2391C234.653 68.9449 242.979 60.6016 253.25 60.6016C263.521 60.6016 271.847 68.9458 271.847 79.2391C271.847 89.5324 263.521 97.8775 253.25 97.8775Z" fill="white"/>
+      <path d="M139.979 97.9881C129.638 97.7335 121.398 89.7789 121.33 79.2386C121.317 69.2623 129.455 60.4883 140.053 60.4883C145.745 60.4883 150.446 62.739 153.961 66.6851L163.844 60.6797C158.323 53.5771 149.714 49.0029 140.034 49.0029C123.372 49.0029 109.864 62.5399 109.864 79.2386C109.864 95.9373 123.372 109.474 140.034 109.474C150.737 109.474 160.13 103.885 165.486 95.4648L155.643 89.6268C152.201 94.7854 146.636 97.9881 139.979 97.9881Z" fill="white"/>
+      <path d="M100.535 59.6896C102.654 55.5538 105.185 52.0093 108.668 48.916H69.6455V110H108.645C105.33 106.876 102.564 103.255 100.415 99.2239H83.1267V84.2274H95.7809C95.6001 82.6176 95.5123 81.0906 95.5123 79.5721C95.5123 77.6221 95.6495 75.6542 95.9207 73.7162H83.1267V59.6896H100.535Z" fill="white"/>
+      <path d="M178.785 59.8673H189.983V110.001H203.553V59.8673H214.805C217.001 55.7623 219.842 52.0837 223.26 48.916H170.33C173.747 52.0828 176.589 55.7623 178.785 59.8673Z" fill="#1E1E1E"/>
+      <path d="M214.805 59.8673H203.607V110.001H190.036V59.8673H178.785C176.589 55.7623 173.747 52.0837 170.33 48.916H223.26C219.842 52.0828 217.001 55.7623 214.805 59.8673Z" fill="white"/>
+      <path d="M29.7932 82.4373L14.7644 48.916H0L29.7318 109.563L59.9027 48.916H44.955L29.7932 82.4373Z" fill="white"/>
+      <path d="M288.001 5V20.1441L288.718 20.5356C291.267 21.9277 298.468 26.0459 303.805 29.1245C301.692 30.3351 298.854 31.9562 296.2 33.4718L295.329 33.9699C292.868 35.3757 290.667 36.6327 289.507 37.3008L288 38.1694V53L330 29.1763L288.001 5Z" fill="#CA1D00"/>
+    </svg>
+    <span class="client-label">Client demo</span>
+  </div>
 
-  <div class="ey">Demo</div>
+  <div class="ey">Prepared for Media Model</div>
   <h1>Media Model demo</h1>
   <p class="sub">Two artifacts from the website redesign — the reasoning, and the result.</p>
 
@@ -86,7 +99,7 @@ h1{font-family:var(--serif);font-weight:700;line-height:1;letter-spacing:-.01em;
     <a class="card" href="Redesign%20Proposal.html">
       <span class="tag">Proposal deck</span>
       <h2>Redesign Proposal</h2>
-      <p>A 21-slide walkthrough from the original brief to a built homepage — every change traced to a finding.</p>
+      <p>A slide-by-slide walkthrough from the original brief to a built homepage — every change traced to a finding.</p>
       <span class="go">Open the deck <span class="arrow">&rarr;</span></span>
     </a>
 
@@ -98,7 +111,10 @@ h1{font-family:var(--serif);font-weight:700;line-height:1;letter-spacing:-.01em;
     </a>
   </div>
 
-  <div class="foot"><span class="bar"></span>mediamodel.am</div>
+  <div class="foot">
+    <span class="site">mediamodel.am</span>
+    <span class="credit">Prepared by VECTO</span>
+  </div>
 </main>
 </body>
 </html>
